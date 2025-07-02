@@ -465,6 +465,25 @@
             </div>
         </div>
     </nav>
+    <!-- Grid About -->
+<div class="about-grid">
+  ...
+</div>
+
+<!-- Sertifikat Section -->
+<div class="content-grid">
+  <!-- Sertifikat muncul otomatis -->
+</div>
+    <script src="js/script.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const container = document.querySelector(".content-grid");
+    if (container) {
+      container.innerHTML = generateAwardCards();
+      AOS.refresh();
+    }
+  });
+</script>
 
     <!-- Konten utama halaman About -->
     <div class="about-container">
@@ -603,26 +622,33 @@
             }
 
             // Fungsi pembantu untuk menghasilkan kartu project
-            function generateProjectCards() {
-                const projects = [
-                    {
-                        title: "E-Commerce Platform",
-                        image: "img/zoro.jpg",
-                        description: "A full-stack e-commerce solution with payment integration",
-                        technologies: ["React", "Node.js", "MongoDB"]
-                    },
-                    {
-                        title: "Portfolio Website",
-                        image: "img/zoro.jpg",
-                        description: "Responsive portfolio website with modern animations",
-                        technologies: ["HTML", "CSS", "JavaScript"]
-                    },
-                    {
-                        title: "Task Management App",
-                        image: "img/zoro.jpg",
-                        description: "Mobile-first task management application",
-                        technologies: ["Vue.js", "Firebase"]
-                    }
+            function generateAwardCards() {
+  const certificates = [
+    {
+      title: "Sertifikat DevFest 2025 - HTML",
+      image: "img/sertifikat-devfest-html.jpg",
+      description: "Penyelesaian pelatihan HTML oleh DevFest 2025. Materi meliputi dasar-dasar pembuatan website dan struktur HTML.",
+      source: "#"
+    },
+    {
+      title: "Sertifikat Apresiasi BSSN - Lampung",
+      image: "img/sertifikat-bssn.jpg",
+      description: "Penghargaan dari Diskominfotik Provinsi Lampung dan BSSN atas kontribusi dalam pelaporan kerentanan sistem keamanan.",
+      source: "#"
+    },
+  ];
+
+  return certificates.map(cert => `
+    <div class="content-card" data-aos="fade-up">
+      <div class="card-image">
+        <img src="${cert.image}" alt="${cert.title}">
+      </div>
+      <h3>${cert.title}</h3>
+      <p>${cert.description}</p>
+      <a href="${cert.source}" class="btn-cert" target="_blank">Lihat Sertifikat</a>
+    </div>
+  `).join("");
+            }
                     // Add more projects as needed
                 ];
 
