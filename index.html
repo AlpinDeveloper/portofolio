@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Muhammad Alfin Candra</title>
@@ -6,16 +7,17 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="stylesheet" href="css/style.css">
     <style>
+        html { scroll-behavior: smooth; }
         section { padding: 80px 20px; }
         h2 { font-size: 32px; text-align: center; margin-bottom: 30px; }
         .container { max-width: 1000px; margin: auto; text-align: center; }
-        .skills-grid, .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
         .card { background: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
         form input, form textarea { width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; }
         form button { padding: 10px 20px; border: none; background: black; color: white; border-radius: 5px; cursor: pointer; }
-        html { scroll-behavior: smooth; }
     </style>
-</head><body>
+</head>
+<body>
     <nav>
         <div class="nav-container">
             <div class="logo" data-aos="zoom-in">Muhammad Alfin Candra</div>
@@ -27,8 +29,7 @@
                 <div class="link"><a href="#contact">Contact</a></div>
             </div>
         </div>
-    </nav><!-- Home Section -->
-<section id="home">
+    </nav><section id="home">
     <div class="main-container">
         <div class="content">
             <h1 data-aos="fade-left">Hey I'm <span>Muhammad Alfin Candra</span></h1>
@@ -46,7 +47,6 @@
     </div>
 </section>
 
-<!-- About Section -->
 <section id="about">
     <div class="container" data-aos="fade-up">
         <h2>About Me</h2>
@@ -54,11 +54,10 @@
     </div>
 </section>
 
-<!-- Skills Section -->
 <section id="skills">
     <div class="container" data-aos="fade-up">
         <h2>Skills</h2>
-        <div class="skills-grid">
+        <div class="grid">
             <div class="card">HTML / CSS / JavaScript</div>
             <div class="card">PHP & MySQL</div>
             <div class="card">React & Tailwind</div>
@@ -68,11 +67,10 @@
     </div>
 </section>
 
-<!-- Services Section -->
 <section id="services">
     <div class="container" data-aos="fade-up">
         <h2>Service</h2>
-        <div class="service-grid">
+        <div class="grid">
             <div class="card">Pembuatan Website Portfolio</div>
             <div class="card">Panel Bot WhatsApp</div>
             <div class="card">Desain UI Modern</div>
@@ -81,14 +79,13 @@
     </div>
 </section>
 
-<!-- Contact Section -->
 <section id="contact">
     <div class="container" data-aos="fade-up">
         <h2>Contact</h2>
-        <form>
-            <input type="text" placeholder="Nama Lengkap" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Pesan" rows="5"></textarea>
+        <form action="send_email.php" method="post">
+            <input type="text" name="name" placeholder="Nama Lengkap" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Pesan" rows="5" required></textarea>
             <button type="submit">Kirim</button>
         </form>
     </div>
@@ -96,6 +93,7 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init();</script>
-<script src="./js/script.js"></script>
+<script src="js/script.js"></script>
 
-</body></html>
+</body>
+</html>
