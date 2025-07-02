@@ -20,7 +20,7 @@
       Import AOS (Animate On Scroll) library
       Digunakan untuk membuat animasi scroll yang menarik 
     -->
-    <link rel="stylesheet" href="https://unpkg.com/muhammadalfin131204@gmail.com/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
     <!-- Import file CSS custom untuk styling tambahan -->
     <link rel="stylesheet" href="css/style.css">
@@ -80,14 +80,14 @@
           - Includes tombol close (x) 
         -->
         <div class="dropdown">
-            <div class="links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="skill.html">Skills</a>
-                <a href="service.html">Service</a>
-                <a href="contact.html">Contact</a>
-                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-            </div>
+  <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i> <!-- ✅ Pindah ke luar .links -->
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="skill.html">Skills</a>
+    <a href="service.html">Service</a>
+    <a href="contact.html">Contact</a>
+  </div>
         </div>
     </nav>
 
@@ -163,11 +163,12 @@
       - AOS library untuk animasi
       - Custom JavaScript untuk fungsionalitas tambahan 
     -->
-    <script src="https://unpkg.com/muhammadalfin131204@gmail.com/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ offset: 0 });
+</script>
     <script>
         // Inisialisasi AOS dengan offset 0 untuk trigger tepat waktu
-        AOS.init({ offset: 0, });
-    </script>
     <script src="./js/script.js"></script>
 </body>
 
